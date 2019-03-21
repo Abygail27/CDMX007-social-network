@@ -50,7 +50,7 @@ const verify = () => {
         if (user) {
           accessToWall();
             console.log('si existe usuario activo')
-            viewUserClose(user); 
+            viewUser(user); 
           // User is signed in.
           let displayName = user.displayName;
           let email = user.email;
@@ -72,13 +72,18 @@ const verify = () => {
     verify();
     
     const accessToWall = () =>{
-      var content= document.getElementById('fake');
-      content.innerHTML = ('solo lo ve usuario activo'); 
+      var content= document.getElementById('post-for-active-users');
+      content.innerHTML = `
+      <input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
+      <button class="btn btn-link" id="button-save" onclick="save()">Publicar</button>
+      
+      `
+     
      }
 
 //SALIR DE LA SESION
 const buttonLogout = document.getElementById('logout');
-const viewUserClose = (user) => {
+const viewUser = (user) => {
      let content = document.getElementById('user-data');
  if (user.mailVerified){
 content.innerHTML = `
