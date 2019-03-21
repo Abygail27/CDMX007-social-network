@@ -1,39 +1,114 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta charset="UTF-8">
-    <title>NETWORKING</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-   
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  
+
+  <title>LINK UP</title>
 </head>
+<body>
+  
+  <h4>Registrarse-Sign Up</h4>
+    <input id="email" type ="email" placeholder="Ingresa email">
+    <input id="pass" type ="password" placeholder="Ingresa password">
+    <!-- <button id="register" onclick="register()">Enviar</button> -->
+    <button id="register">Enviar</button>
 
+<h4>Iniciar Sesión-Sign In</h4>
+    <input id="email-ac" type ="email" placeholder="Ingresa email">
+    <input id="pass-ac" type ="password" placeholder="Ingresa password">
+    <button id="access">Acceso</button>
 
-<body class="back1">
+    <section id="user-data">
 
-    <h1>Link Up!</h1>
+    </section>
     
-  <div id = "register_inputs" class="register_entry"></div>
+    <button id="logout" onclick="closeSession()">Cerrar Sesión</button>
 
-    <div class="down">
-<a href ="#/register">REGISTRARSE</button>
-   <a href ="#/login">INICIAR SESIÓN</a>
-    </div>
-    
-    <div id = "views"></div>
-    <footer>prueba spa
-    
 
-      </footer>
-  <script src="/src/views/route/js/library.js"></script>
-  <script src="/src/views/route/js/routes.js"></script>
-  <script src = "/src/views/route/js/controlers/control.js"></script>
+
+
+    <div class="container-section">
+      <nav id = "main-nav">
+          <a href="#" class="sidenav-trigger" data-target="menu-side">
+            <i class="material-icons" id="menu-side-nav">menu</i></a>
+          </a>
+      </nav>
+      <ul class="sidenav" id="menu-side">
+          <li>
+              <div class="user-view">
+                  <div class="background">
+                      <img src="assets/images/backgroundlu2.png" alt="">
+                  </div>
+                  <a href="#">
+                      <img src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg" alt="user" class="circle">
+                      <a href="">
+                          <span class="name-with-white-text">usuario apellido</span>
+                      </a> <br>
+                      <a href="">
+                          <span class="email-with-white-text">usuario@correo.com</span>
+                      </a>
+                  </a>
+              </div>
+          </li>
+          <li>
+              <a href="">
+                  <i class="material-icons">create</i>
+                  Editar perfil
+              </a>
+          </li>
+          <li>
+              <div class="divider"></div>
+              <a href="">
+                  <i class="material-icons">card_membership</i>
+                  Lista de eventos
+              </a>
+          </li>
+          <li>
+              <a href="">
+                  <i class="material-icons">contact_mail</i>
+                  Lista de contactos
+              </a>
+          </li>
+      </ul>
+  </div>
+
+  <section class="container">
+    <h1>Link up!</h1>
+    <!--<input type="text" id="name" placeholder="Nombre" class="form-control my-3">-->
+    <input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
+    <button class="btn btn-link" id="button-save" onclick="save()">Publicar</button>
+</section>
+<section id="wall">
+    <section id="post"></section>
+    <section id="buttons-wall">
+    </section>
+</section>
+
+<div id = "fake"></div>
+  
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+<!-- <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script> -->
+<script src="firebase.js"></script>    
+<script src="main.js"></script>
+<script src="wall.js"></script>
 
 </body>
-
 </html>
